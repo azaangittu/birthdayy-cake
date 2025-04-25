@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIRTHDAY SURPRISE</title>
+  <style>
+    body {
+      background: #f9b4c6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      background: #8B4513;
+      border-radius: 10px 10px 0 0;
+      transform: translateY(-300px);
+      animation: dropCake 800ms 1s ease-out forwards;
+    }
+
+    .icing {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .candle {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 50px;
+      background: #fff;
+      border-radius: 5px;
+      animation: dropCandle 800ms 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      animation: flameFlicker 0.5s infinite alternate;
+      opacity: 0;
+      animation-delay: 2.3s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes dropCake {
+      from {
+        transform: translateY(-300px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes dropCandle {
+      0% {
+        transform: translate(-50%, -300px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes flameFlicker {
+      from {
+        transform: translateX(-50%) scale(1);
+        background: orange;
+      }
+      to {
+        transform: translateX(-50%) scale(1.2);
+        background: gold;
+      }
+    }
+
+    .message {
+      position: absolute;
+      top: calc(100% + 20px);
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      color: #8B4513;
+      opacity: 0;
+      animation: showMessage 500ms 3s ease forwards;
+    }
+
+    @keyframes showMessage {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cake">
+    <div class="icing"></div>
+    <div class="candle"></div>
+    <div class="flame"></div>
+    <div class="message">Happy Birthday E❤️🥹!</div>
+  </div>
+
+</body>
+</html>
